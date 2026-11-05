@@ -119,3 +119,21 @@ body .interior-shell .page-hero{background:transparent!important}
  body .interior-shell .page-hero{min-height:240px!important}
  body .interior-shell .page-hero .hero-content{padding:2rem 6% 2.4rem!important}
 }
+
+/* FINAL HERO OVERRIDE: same verified clean photographic source as homepage.
+   Avoid embedded lettering and heavily upscaled legacy *_hero files. */
+body .interior-shell{
+ background-color:#102e38!important;
+ background-image:linear-gradient(90deg,rgba(5,29,38,.8),rgba(5,29,38,.32)),url('/Yuyay-Analytics-/images/yuyay_cotopaxi_clean_hero.jpg')!important;
+ background-repeat:no-repeat!important;
+ background-size:cover!important;
+ background-position:center 45%!important;
+}
+body .interior-shell .site-header,body .interior-shell .page-hero{background:transparent!important}
+body .interior-shell .page-hero{min-height:clamp(290px,35vw,440px)!important}
+@media(max-width:720px){
+ body .interior-shell{background-position:56% 45%!important}
+ body .interior-shell .page-hero{min-height:290px!important}
+ body .interior-shell .page-hero .hero-content{padding:2.5rem 6% 3rem!important}
+ body .interior-shell .page-hero h1{font-size:clamp(2.35rem,8vw,3.5rem)!important}
+}
