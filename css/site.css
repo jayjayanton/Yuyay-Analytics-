@@ -32,3 +32,13 @@
 .flip-card.flipped .flip-back{display:block}
 .flip-front button{margin-top:.5rem}
 }
+
+/* Scenic navigation and integrated wordmark */
+body>header{background:linear-gradient(90deg,rgba(12,44,64,.83),rgba(12,44,64,.62)),url('../images/home_hero.jpg') center 46%/cover;color:#fff;min-height:145px;border-bottom:3px solid #a46f2d;align-items:center}
+body>header a{color:#fff}
+body>header>a{display:flex;align-items:center;background:transparent}
+body>header>a img{background:transparent!important;border-radius:0!important;filter:brightness(0) invert(1);max-width:min(260px,70vw);height:auto}
+body>header nav{display:flex;flex-wrap:wrap;gap:.45rem .8rem;align-items:center}
+body>header nav a{margin:0;padding:.4rem .3rem;font-size:.95rem;font-weight:600}
+body>header nav a[aria-current="page"]{border-bottom:2px solid #d7ae6d}
+@media(max-width:650px){body>header{padding:1rem 5%;min-height:150px;gap:.5rem}body>header>a img{max-width:210px}body>header nav{gap:.2rem .65rem}body>header nav a{font-size:.88rem;padding:.35rem .1rem}}
