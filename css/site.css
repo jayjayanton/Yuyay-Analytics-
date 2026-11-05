@@ -34,7 +34,7 @@
 }
 
 /* Scenic navigation and integrated wordmark */
-body>header{background:linear-gradient(90deg,rgba(12,44,64,.83),rgba(12,44,64,.62)),var(--nav-hero,url('../images/home_hero.jpg')) center 46%/cover;color:#fff;min-height:145px;border-bottom:3px solid #a46f2d;align-items:center}
+body>header{background:linear-gradient(90deg,rgba(12,44,64,.83),rgba(12,44,64,.62)),var(--nav-hero,linear-gradient(#143746,#143746)) center 46%/cover;color:#fff;min-height:145px;border-bottom:3px solid #a46f2d;align-items:center}
 body>header a{color:#fff}
 body>header>a{display:flex;align-items:center;background:transparent}
 body>header>a img{background:transparent!important;border-radius:0!important;filter:brightness(0) invert(1);max-width:min(260px,70vw);height:auto}
@@ -83,57 +83,19 @@ main.interior-main>.page-banner{display:none}
 .production-steps>div{padding:1rem;border-radius:10px;background:#e9ecdf;border-top:3px solid #a46f2d}
 .production-steps strong{display:block;color:#173d2e}
 
-/* Hero image quality: preserve original image scale on narrow screens.
-   Avoid magnifying low-resolution source assets with cover. */
-.interior-shell{
- background-color:#153b43;
- background-image:linear-gradient(90deg,rgba(8,31,41,.82),rgba(8,31,41,.4)),var(--scene);
- background-size:100% 100%,100% auto;
- background-repeat:no-repeat,no-repeat;
- background-position:center top,center top;
-}
-@media(max-width:720px){
- .interior-shell{
-  background-size:100% 100%,100% auto;
-  background-position:center top,center top;
- }
- .interior-shell .page-hero{min-height:260px}
- .interior-shell .page-hero .hero-content{padding:2.3rem 6% 2.8rem}
-}
 
-/* Definitive non-zoomed hero treatment. Do not crop or upscale hero art. */
+/* Active seven-photo hero collection: one clean JPEG per interior page. */
 body .interior-shell{
-  background-color:#143746!important;
-  background-image:linear-gradient(90deg,rgba(8,31,41,.74),rgba(8,31,41,.44)),var(--scene)!important;
-  background-repeat:no-repeat,no-repeat!important;
-  background-size:100% 100%,contain!important;
-  background-position:center center,center top!important;
+ background-color:#143746;
+ background-image:linear-gradient(90deg,rgba(7,32,42,.74),rgba(7,32,42,.32)),var(--scene);
+ background-size:cover;
+ background-position:center center;
+ background-repeat:no-repeat;
 }
-body .interior-shell .site-header{background:transparent!important}
-body .interior-shell .page-hero{background:transparent!important}
+body .interior-shell .site-header,
+body .interior-shell .page-hero{background:transparent}
 @media(max-width:720px){
- body .interior-shell{
-  background-size:100% 100%,100% auto!important;
-  background-position:center center,center top!important;
- }
- body .interior-shell .page-hero{min-height:240px!important}
- body .interior-shell .page-hero .hero-content{padding:2rem 6% 2.4rem!important}
-}
-
-/* FINAL HERO OVERRIDE: same verified clean photographic source as homepage.
-   Avoid embedded lettering and heavily upscaled legacy *_hero files. */
-body .interior-shell{
- background-color:#102e38!important;
- background-image:linear-gradient(90deg,rgba(5,29,38,.8),rgba(5,29,38,.32)),url('/Yuyay-Analytics-/images/yuyay_cotopaxi_clean_hero.jpg')!important;
- background-repeat:no-repeat!important;
- background-size:cover!important;
- background-position:center 45%!important;
-}
-body .interior-shell .site-header,body .interior-shell .page-hero{background:transparent!important}
-body .interior-shell .page-hero{min-height:clamp(290px,35vw,440px)!important}
-@media(max-width:720px){
- body .interior-shell{background-position:56% 45%!important}
- body .interior-shell .page-hero{min-height:290px!important}
- body .interior-shell .page-hero .hero-content{padding:2.5rem 6% 3rem!important}
- body .interior-shell .page-hero h1{font-size:clamp(2.35rem,8vw,3.5rem)!important}
+ body .interior-shell{background-position:center center}
+ body .interior-shell .page-hero{min-height:290px}
+ body .interior-shell .page-hero .hero-content{padding:2.5rem 6% 3rem}
 }
