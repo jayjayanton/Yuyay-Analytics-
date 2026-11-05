@@ -64,3 +64,21 @@ main.interior-main{max-width:1200px;padding:2.5rem clamp(20px,5vw,65px)}
 main.interior-main>.page-banner{display:none}
 .interior-main .card{box-shadow:0 4px 15px #0c2c400b}
 @media(max-width:720px){.site-header .header-inner{display:block;padding:1rem 5%}.site-header .brand img{width:195px}.site-header .site-nav{margin-top:.7rem;margin-left:0;gap:.15rem .7rem}.site-header .site-nav a{font-size:.88rem;padding:.3rem .08rem}.page-hero{min-height:310px;background-position:55% center}.page-hero .hero-content{padding:2.8rem 6%}.page-hero h1{font-size:clamp(2.65rem,10vw,4rem)}main.interior-main{padding:2rem 5%}}
+
+/* Single shared visual shell: header and hero over one continuous image */
+.interior-shell{background-image:linear-gradient(90deg,rgba(8,31,41,.83) 0%,rgba(8,31,41,.48) 62%,rgba(8,31,41,.25) 100%),var(--scene);background-size:cover;background-position:center 48%;color:#fff}
+.interior-shell .site-header,.interior-shell body>header.site-header,body>.interior-shell>header.site-header{background:none!important;border-bottom:1px solid #ffffff55;padding:0;min-height:0}
+.interior-shell .page-hero{background:none!important;min-height:clamp(340px,43vw,510px)}
+.interior-shell .site-header .brand img{filter:brightness(0) invert(1)!important;background:transparent!important;max-height:90px}
+.interior-shell .site-nav a{color:white!important}
+.interior-shell .page-hero h1{font-family:Georgia,serif;font-size:clamp(2.8rem,5.5vw,5.2rem);line-height:1.08}
+.interior-shell .page-hero .hero-content{padding:3.7rem clamp(22px,6vw,75px) 4.5rem}
+@media(max-width:720px){.interior-shell{background-position:57% center}.interior-shell .site-header .header-inner{padding:1rem 5%}.interior-shell .site-header .brand img{max-height:75px;width:190px}.interior-shell .page-hero{min-height:330px}.interior-shell .page-hero h1{font-size:clamp(2.5rem,9vw,3.9rem)}.interior-shell .page-hero .hero-content{padding:3rem 6% 3.5rem}}
+/* Analytics service icons and production workflow */
+.analytics-specializations{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin:2rem 0}
+.analytics-specializations .card{border:1px solid #dcd8ca;border-radius:14px;padding:1.5rem}
+.analytics-icon{width:58px;height:58px;background:#173d2e;border-radius:50%;display:grid;place-items:center;margin-bottom:1rem}
+.analytics-icon svg{width:29px;height:29px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.production-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.7rem;margin:1.4rem 0}
+.production-steps>div{padding:1rem;border-radius:10px;background:#e9ecdf;border-top:3px solid #a46f2d}
+.production-steps strong{display:block;color:#173d2e}
