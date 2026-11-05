@@ -7,3 +7,28 @@
 /* Page-specific scenic backdrops */
 .page-banner{height:clamp(190px,28vw,340px);border-radius:14px;margin:0 0 2.5rem;background-image:linear-gradient(90deg,#0c2c4030,#0c2c400d),var(--page-hero);background-position:center;background-size:cover;box-shadow:0 8px 22px #0c2c4020}
 @media(max-width:600px){.page-banner{height:190px;margin-bottom:1.5rem}}
+
+/* Project cards: readable image/text hierarchy and visible controls on phones */
+.flip-card,.flip-inner{min-height:490px}
+.flip-front{gap:14px;justify-content:space-between}
+.flip-front h2{margin:.65rem 0;font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.24}
+.flip-front p{margin:.55rem 0}
+.flip-front button{display:block;position:relative;z-index:1;flex-shrink:0;width:100%;min-height:44px;font-size:1rem;font-weight:650}
+.flip-front .pill{margin:.4rem 0 .8rem}
+.flip-back{font-size:.92rem}
+.flip-back button{width:100%;min-height:44px}
+@media(max-width:650px){
+.project-tools{display:grid;grid-template-columns:1fr;gap:.4rem}
+.project-tools label{margin-top:.4rem}
+.project-tools select,.project-tools input{width:100%;max-width:100%;font-size:16px;min-height:46px}
+.flip-grid{grid-template-columns:minmax(0,1fr);gap:1rem}
+.flip-card,.flip-inner{min-height:0;height:auto}
+.flip-inner{transform:none!important;display:block}
+.flip-face{position:relative;inset:auto;backface-visibility:visible;-webkit-backface-visibility:visible;transform:none!important;overflow:visible;padding:1.2rem}
+.flip-front{min-height:0;display:flex}
+.flip-front img{height:150px!important}
+.flip-back{display:none;margin-top:0}
+.flip-card.flipped .flip-front{display:none}
+.flip-card.flipped .flip-back{display:block}
+.flip-front button{margin-top:.5rem}
+}
