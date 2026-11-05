@@ -99,3 +99,6 @@ body .interior-shell .page-hero{background:transparent}
  body .interior-shell .page-hero{min-height:290px}
  body .interior-shell .page-hero .hero-content{padding:2.5rem 6% 3rem}
 }
+
+/* Services navigation: readable multi-line category links on all screen sizes */
+.service-jump{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.5rem 0 2rem;max-width:100%;min-width:0}.service-jump a{display:inline-flex;align-items:center;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;line-height:1.45;padding:.55rem .85rem;border:1px solid #c9d9dc;border-radius:9px;text-decoration:none}.service-detail,.interior-main{min-width:0;overflow-wrap:break-word}.service-detail a{overflow-wrap:anywhere}.analytics-specializations{margin:1.4rem 0}
