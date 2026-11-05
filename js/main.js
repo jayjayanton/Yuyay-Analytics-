@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded',()=>{
  const current=location.pathname.split('/').pop()||'index.html';
  document.querySelectorAll('.site-nav a').forEach(a=>{if(a.getAttribute('href')===current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
  const shell=document.querySelector('.interior-shell');
- if(shell){const value=shell.style.getPropertyValue('--scene');const match=value.match(/url\(['"]?([^'")]+)['"]?\)/);if(match){const test=new Image();test.onerror=()=>{shell.style.setProperty('--scene',"url('images/andes_homepage_hero.jpg')")};test.src=match[1]}}
+ if(shell){const value=shell.style.getPropertyValue('--scene');const match=value.match(/url\(['"]?([^'")]+)['"]?\)/);if(match){const test=new Image();test.onerror=()=>{shell.style.setProperty('--scene',"url('/Yuyay-Analytics-/images/andes_homepage_hero.jpg')")};test.src=match[1]}}
 });
