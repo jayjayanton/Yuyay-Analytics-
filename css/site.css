@@ -82,3 +82,21 @@ main.interior-main>.page-banner{display:none}
 .production-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.7rem;margin:1.4rem 0}
 .production-steps>div{padding:1rem;border-radius:10px;background:#e9ecdf;border-top:3px solid #a46f2d}
 .production-steps strong{display:block;color:#173d2e}
+
+/* Hero image quality: preserve original image scale on narrow screens.
+   Avoid magnifying low-resolution source assets with cover. */
+.interior-shell{
+ background-color:#153b43;
+ background-image:linear-gradient(90deg,rgba(8,31,41,.82),rgba(8,31,41,.4)),var(--scene);
+ background-size:100% 100%,100% auto;
+ background-repeat:no-repeat,no-repeat;
+ background-position:center top,center top;
+}
+@media(max-width:720px){
+ .interior-shell{
+  background-size:100% 100%,100% auto;
+  background-position:center top,center top;
+ }
+ .interior-shell .page-hero{min-height:260px}
+ .interior-shell .page-hero .hero-content{padding:2.3rem 6% 2.8rem}
+}
