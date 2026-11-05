@@ -34,7 +34,7 @@
 }
 
 /* Scenic navigation and integrated wordmark */
-body>header{background:linear-gradient(90deg,rgba(12,44,64,.83),rgba(12,44,64,.62)),url('../images/home_hero.jpg') center 46%/cover;color:#fff;min-height:145px;border-bottom:3px solid #a46f2d;align-items:center}
+body>header{background:linear-gradient(90deg,rgba(12,44,64,.83),rgba(12,44,64,.62)),var(--nav-hero,url('../images/home_hero.jpg')) center 46%/cover;color:#fff;min-height:145px;border-bottom:3px solid #a46f2d;align-items:center}
 body>header a{color:#fff}
 body>header>a{display:flex;align-items:center;background:transparent}
 body>header>a img{background:transparent!important;border-radius:0!important;filter:brightness(0) invert(1);max-width:min(260px,70vw);height:auto}
