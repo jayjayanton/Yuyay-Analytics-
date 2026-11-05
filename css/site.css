@@ -100,3 +100,22 @@ main.interior-main>.page-banner{display:none}
  .interior-shell .page-hero{min-height:260px}
  .interior-shell .page-hero .hero-content{padding:2.3rem 6% 2.8rem}
 }
+
+/* Definitive non-zoomed hero treatment. Do not crop or upscale hero art. */
+body .interior-shell{
+  background-color:#143746!important;
+  background-image:linear-gradient(90deg,rgba(8,31,41,.74),rgba(8,31,41,.44)),var(--scene)!important;
+  background-repeat:no-repeat,no-repeat!important;
+  background-size:100% 100%,contain!important;
+  background-position:center center,center top!important;
+}
+body .interior-shell .site-header{background:transparent!important}
+body .interior-shell .page-hero{background:transparent!important}
+@media(max-width:720px){
+ body .interior-shell{
+  background-size:100% 100%,100% auto!important;
+  background-position:center center,center top!important;
+ }
+ body .interior-shell .page-hero{min-height:240px!important}
+ body .interior-shell .page-hero .hero-content{padding:2rem 6% 2.4rem!important}
+}
