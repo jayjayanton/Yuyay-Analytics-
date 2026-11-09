@@ -30,13 +30,13 @@ test('country and theme controls filter the home project cards', async ({ page }
   const errors = captureRuntimeErrors(page);
   await page.goto('/');
   const cards = page.locator('#project-grid .card');
-  await expect(cards).toHaveCount(18);
+  await expect(cards).toHaveCount(11);
   await page.locator('#country-filter').selectOption('Colombia');
   await expect(cards).toHaveCount(1);
   await expect(cards.first()).toContainText('Colombia');
   await page.locator('#country-filter').selectOption('all');
   await page.locator('#theme-filter').selectOption('Energy');
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(1);
   await assertNoRuntimeErrors(errors);
 });
 

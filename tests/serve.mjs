@@ -9,7 +9,7 @@ const port = 4174;
 const types = { '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.json':'application/json', '.svg':'image/svg+xml', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.gif':'image/gif', '.webp':'image/webp', '.pdf':'application/pdf', '.csv':'text/csv', '.mp4':'video/mp4' };
 http.createServer((req,res)=>{
   let pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-  if (prefix !== '/' && pathname.startsWith(prefix)) pathname = pathname.slice(prefix.length);
+  if (prefix !== '/' && pathname.startsWith(prefix)) pathname = '/' + pathname.slice(prefix.length);
   if (pathname === '/' || pathname === '') pathname = '/index.html';
   const target = path.resolve(root, '.' + pathname);
   if (!target.startsWith(root + path.sep) && target !== root) { res.writeHead(403).end('Forbidden'); return; }
