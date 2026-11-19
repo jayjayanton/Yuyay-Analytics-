@@ -47,6 +47,11 @@ class SiteTests(unittest.TestCase):
         for name in PAGES+["js/projects.js"]:
             s=(ROOT/name).read_text(encoding="utf-8")
             self.assertNotIn("github.com/jayjayanton/Predio-AI",s)
+    def test_personal_expense_prototype_not_marketed(self):
+        for name in ["index.html", "services.html", "js/projects.js"]:
+            s=(ROOT/name).read_text(encoding="utf-8")
+            self.assertNotIn("Expense Analyzer",s)
+
     def test_cases_are_visible_not_flip_cards(self):
         js=(ROOT/"js/projects.js").read_text(encoding="utf-8")
         self.assertIn("work-card",js);self.assertNotIn("flip-card",js)
