@@ -48,3 +48,10 @@ footer{background:#0D1730;color:#D6E0F4;padding:3.25rem 0 2rem}footer .footer-gr
 .site-header .brand::before{width:194px;height:77px;background-image:url("../images/yuyay-logo-approved.svg");background-size:contain;background-position:left center}
 .footer-grid .brand::before{width:204px;height:82px;background:#fff url("../images/yuyay-logo-approved.svg") center center/contain no-repeat;border-radius:8px;padding:5px}
 @media(max-width:600px){.site-header .brand::before{width:150px;height:60px}.footer-grid .brand::before{width:180px;height:74px}}
+
+/* Use the same approved logo image semantically in header and footer.
+   The earlier pseudo-element logos are disabled. */
+.site-header .brand::before,.footer-grid .brand::before{display:none!important;content:none!important}
+.site-header .brand-logo-approved{display:block;width:194px;height:auto;max-width:100%;object-fit:contain}
+.footer-grid .brand-logo-approved{display:block;width:204px;height:auto;padding:6px;background:#fff;border-radius:8px}
+@media(max-width:600px){.site-header .brand-logo-approved{width:150px}.footer-grid .brand-logo-approved{width:180px}}
