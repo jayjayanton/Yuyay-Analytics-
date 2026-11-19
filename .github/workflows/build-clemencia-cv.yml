@@ -1,0 +1,46 @@
+name: Publish Clemencia Master CV PDF
+on:
+  push:
+    branches: [main]
+    paths:
+      - "documents/clemencia-master.html"
+      - ".github/workflows/build-clemencia-cv.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install PDF renderer
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "weasyprint==68.0" "pypdf==5.9.0"
+      - name: Generate and validate full CV
+        run: |
+          weasyprint documents/clemencia-master.html documents/Clemencia_Vela_Master_CV.pdf
+          file documents/Clemencia_Vela_Master_CV.pdf
+          python - <<'PY'
+          from pathlib import Path
+          from pypdf import PdfReader
+          p=Path("documents/Clemencia_Vela_Master_CV.pdf")
+          pdf=PdfReader(str(p))
+          text=" ".join((page.extract_text() or "") for page in pdf.pages)
+          assert len(pdf.pages)>=4, "A master CV should retain full assignment history"
+          assert "Clemencia Vela" in text and "University of Aberdeen" in text
+          assert "Global Peatlands Initiative" in text and "Coca Codo Sinclair" in text
+          print(f"Verified {len(pdf.pages)} master-CV pages, {p.stat().st_size} bytes")
+          PY
+      - name: Commit refreshed PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add documents/Clemencia_Vela_Master_CV.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish full Clemencia Vela master CV PDF"
+            git push origin HEAD:main
+          fi
